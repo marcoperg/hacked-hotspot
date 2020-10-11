@@ -12,6 +12,7 @@
     "html-to-react": "^1.4.4",
     "next": "9.5.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "websocket": "^1.0.32"
   }
 }
