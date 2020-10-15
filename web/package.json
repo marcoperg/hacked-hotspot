@@ -8,6 +8,7 @@
     "start": "next start -p 80"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
     "classnames": "^2.2.6",
     "html-to-react": "^1.4.4",

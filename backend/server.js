@@ -7,7 +7,7 @@ const { websocket } = require('./controllers/websocket');
 
 app.get('/', function (req, res, next) {
 	console.log('get route');
-	res.end();
+	res.send({ message: 'hello world', statusCode: 200 });
 });
 
 app.ws('/', websocket);
