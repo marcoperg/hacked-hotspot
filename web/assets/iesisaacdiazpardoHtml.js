@@ -1,4 +1,4 @@
-const iesisaacdiazpardoHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+export const iesisaacdiazpardoHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="gl" xml:lang="gl" dir="ltr">
 
 <head>
@@ -663,4 +663,79 @@ var BASE_URL = "/centros/iesisaacdiazpardo/";
 <div class="byy"><a href="http://www.radut.net">by Dr. Radut</a></div></body>
 </html>`;
 
-export default iesisaacdiazpardoHtml;
+export const iesisaacdiazpardoHead = `<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IES Isaac Díaz Pardo | </title>
+<meta name="note" content="zp6-1.26"/>
+
+
+
+<link type="text/css" rel="stylesheet" media="all" href="/centros/iesisaacdiazpardo/custom-styles.css" />
+
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/blogapi/rsd" />
+<link rel="alternate" type="application/rss+xml" title="IES Isaac Díaz Pardo RSS" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/rss.xml" />
+<link rel="shortcut icon" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/system/files/u10/LOGO5.jpg" type="image/x-icon" />
+<!--[if lte IE 6]>
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/themes/zeropoint/css/ie6.css" />
+<![endif]-->
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/themes/zeropoint/css/ie7.css" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/modules/aggregator/aggregator.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/modules/book/book.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/modules/node/node.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/modules/system/defaults.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/modules/system/system.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/modules/system/system-menus.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/modules/user/user.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/cck/theme/content-module.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/collapsiblock/collapsiblock.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/ctools/css/ctools.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/date/date.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/libraries/jquery.ui/themes/base/jquery-ui.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/date/date_popup/themes/jquery.timeentry.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/filefield/filefield.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/img_assist/img_assist.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/lightbox2/css/lightbox.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/nice_menus/nice_menus.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/nice_menus/nice_menus_default.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/misc/farbtastic/farbtastic.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/calendar/calendar.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/cck/modules/fieldgroup/fieldgroup.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/views/css/views.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/event/event.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/themes/zeropoint/css/style-zero.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/themes/zeropoint/css/ink.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/themes/zeropoint/_custom/custom-style.css?A" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/themes/zeropoint/css/round.css?A" />
+<link type="text/css" rel="stylesheet" media="print" href="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/themes/zeropoint/css/print.css?A" />
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/jquery_update/replace/jquery.min.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/misc/jquery-extend-3.4.0.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/misc/jquery-html-prefilter-3.5.0-backport.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/misc/drupal.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo//srv/hosting/home/iesisaacdiazpardo/drupal/files/languages/gl_d8eebc10f5d3c85e65b403ff55f67c9a.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/jstools/jstools.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/collapsiblock/collapsiblock.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/jstools/jquery.cookie.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/img_assist/img_assist.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/lightbox2/js/auto_image_handling.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/lightbox2/js/lightbox.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/nice_menus/superfish/js/superfish.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/nice_menus/superfish/js/jquery.bgiframe.min.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/nice_menus/superfish/js/jquery.hoverIntent.minified.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/nice_menus/nice_menus.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/sites/all/modules/event/eventblock.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/misc/progress.js?A"></script>
+<script type="text/javascript" src="http://www.edu.xunta.gal/centros/iesisaacdiazpardo/misc/tableheader.js?A"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/centros/iesisaacdiazpardo/", "jstools": { "cleanurls": true, "basePath": "/centros/iesisaacdiazpardo/" }, "collapsiblock": { "blocks": { "block-autologout-0": "1", "block-block-6": "1", "block-block-13": "1", "block-block-5": "1", "block-menu-2": "1", "block-block-15": "1", "block-event-0": "1", "block-menu-menu-sala-de-estudio": "1", "block-block-16": "1", "block-block-17": "1", "block-menu-menu-profesorado": "1", "block-block-7": "1", "block-menu-menu-outubro": "1", "block-block-19": "1", "block-block-20": "1", "block-block-14": "1", "block-menu-primary-links": "1", "block-user-1": "1", "block-menu-menu-secretar--a": "1", "block-block-11": "1", "block-menu-menu-sec": "1", "block-menu-menu-o-centro": "1", "block-block-12": "1", "block-block-24": "1", "block-block-25": "1", "block-menu-menu-programaseducativos": "1", "block-menu-menu-normalizaci--n-": "1", "block-block-30": "1", "block-block-31": "1", "block-block-32": "1", "block-menu-menu-programatei": "1", "block-menu-menu-esa": "1", "block-views-epicentro-block_1": "1", "block-block-33": "1", "block-block-34": "1", "block-menu-menu-distintitvocalidade": "1", "block-block-35": "1", "block-block-36": "1", "block-block-37": "1", "block-block-38": "1", "block-block-39": "2", "block-menu-menu-covid-19": "2", "block-block-40": "2", "block-menu-menu-distincions": "1" }, "default_state": 1, "slide_type": 1, "slide_speed": 200, "block_title": ":header:first", "block": "div.block", "block_content": "div.content" }, "lightbox2": { "rtl": "0", "file_path": "/centros/iesisaacdiazpardo/(\\w\\w/)system/files", "default_image": "/centros/iesisaacdiazpardo/sites/all/modules/lightbox2/images/brokenimage.jpg", "border_size": 10, "font_color": "000", "box_color": "fff", "top_position": "", "overlay_opacity": "0.8", "overlay_color": "000", "disable_close_click": 1, "resize_sequence": 1, "resize_speed": 400, "fade_in_speed": 400, "slide_down_speed": 600, "use_alt_layout": 0, "disable_resize": 0, "disable_zoom": 0, "force_show_nav": 0, "show_caption": 1, "loop_items": 1, "node_link_text": "detalles", "node_link_target": 0, "image_count": "Imaxe !current de !total", "video_count": "Video !current de !total", "page_count": "Páxina !current de !total", "lite_press_x_close": "press \x3ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\x3e\x3ckbd\x3ex\x3c/kbd\x3e\x3c/a\x3e to close", "download_link_text": "", "enable_login": false, "enable_contact": false, "keys_close": "c x 27", "keys_previous": "p 37", "keys_next": "n 39", "keys_zoom": "z", "keys_play_pause": "32", "display_image_size": "thumbnail", "image_node_sizes": "(\\.thumbnail)", "trigger_lightbox_classes": "img.thumbnail, img.image-thumbnail", "trigger_lightbox_group_classes": "", "trigger_slideshow_classes": "", "trigger_lightframe_classes": "", "trigger_lightframe_group_classes": "", "custom_class_handler": 0, "custom_trigger_classes": "", "disable_for_gallery_lists": 1, "disable_for_acidfree_gallery_lists": true, "enable_acidfree_videos": true, "slideshow_interval": 5000, "slideshow_automatic_start": 0, "slideshow_automatic_exit": 0, "show_play_pause": 1, "pause_on_next_click": 0, "pause_on_previous_click": 1, "loop_slides": 1, "iframe_width": 250, "iframe_height": 170, "iframe_border": 1, "enable_video": 0 }, "nice_menus_options": { "delay": "800", "speed": "slow" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var BASE_URL = "/centros/iesisaacdiazpardo/";
+//--><!]]>
+</script>
+<script type="text/javascript"> </script>
+`;

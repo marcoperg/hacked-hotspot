@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
-import {Container, Row, Button} from 'react-bootstrap'
+import { Container, Row, Button } from 'react-bootstrap';
 import { client, w3cwebsocket as W3CWebSocket } from 'websocket';
+import DOMPurify from 'dompurify';
 
 export default function Home() {
 	const ws = useRef(null);
@@ -22,18 +23,22 @@ export default function Home() {
 	}, []);
 
 	function send(text) {
-        if (ws.current.readyState === ws.current.OPEN) {
-            ws.current.send(text);
-        }
-    }
+		if (ws.current.readyState === ws.current.OPEN) {
+			ws.current.send(text);
+		}
+	}
 
 	return (
 		<Container>
 			<Row className="mb-2">
-				<Button variant="dark" onClick={()=> send('rotation')}>Rotation</Button>
+				<Button variant="dark" onClick={() => send('rotation')}>
+					Rotation
+				</Button>
 			</Row>
 			<Row>
-				<Button variant="dark" onClick={()=> send('upsideDown')}>Upside down</Button>
+				<Button variant="dark" onClick={() => send('upsideDown')}>
+					Upside down
+				</Button>
 			</Row>
 		</Container>
 	);

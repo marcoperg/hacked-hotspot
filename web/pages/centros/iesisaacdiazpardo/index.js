@@ -1,6 +1,7 @@
-import iesisaacdiazpardoHtml from '../../../assets/iesisaacdiazpardoHtml';
+import { iesisaacdiazpardoHtml, iesisaacdiazpardoHead } from '../../../assets/iesisaacdiazpardoHtml';
 import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
+import Head from 'next/head';
 import { client, w3cwebsocket as W3CWebSocket } from 'websocket';
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
 
 	return (
 		<div>
+			<Head dangerouslySetInnerHTML={{ __html: iesisaacdiazpardoHead }}></Head>
 			<div className={className} dangerouslySetInnerHTML={{ __html: iesisaacdiazpardoHtml }}></div>;
 		</div>
 	);
