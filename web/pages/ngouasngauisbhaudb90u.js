@@ -17,13 +17,12 @@ export default function Home() {
 
 		ws.current.onopen = () => {
 			console.log('WebSocket Client Connected');
+			getData();
 		};
 
 		ws.current.onclose = () => {
 			console.log('echo-protocol Client Closed');
 		};
-
-		getData();
 	}, []);
 
 	function send(text) {
