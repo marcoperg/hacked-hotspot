@@ -13,7 +13,7 @@ export function useConnectedUsers() {
 				setData(res.data);
 			})
 			.catch(() => {
-				setError(falses);
+				setError(true);
 			})
 			.finally(() => {
 				setLoading(false);
