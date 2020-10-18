@@ -36,7 +36,7 @@ export default function Home() {
 		<Container className="my-5 p-2 mx-0 w-100">
 			<Row className="mb-2 m-0 w-100 p-0 d-flex justify-content-center">
 				<Badge disable variant="dark" className=" h-100 m-0 w-100">
-					Connected users: {(!loading && !error && data.connectedUsers) || 'loading...'}
+					Connected users: {(!loading && !error && `you and ${1 - data.connectedUsers} others`) || 'loading...'}
 				</Badge>
 			</Row>
 			<Row className="mb-2 m-0 w-100 p-0 d-flex justify-content-center">
