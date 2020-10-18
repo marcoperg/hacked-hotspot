@@ -9,8 +9,6 @@ export default function Home() {
 
 	console.log(loading, error, data);
 	useEffect(() => {
-		getData();
-
 		ws.current = new W3CWebSocket(process.env.NEXT_PUBLIC_BACKEND_WS_URL, 'echo-protocol');
 
 		ws.current.onerror = () => {
@@ -24,6 +22,8 @@ export default function Home() {
 		ws.current.onclose = () => {
 			console.log('echo-protocol Client Closed');
 		};
+
+		getData();
 	}, []);
 
 	function send(text) {
