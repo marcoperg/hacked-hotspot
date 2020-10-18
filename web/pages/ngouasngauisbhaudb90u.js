@@ -28,14 +28,14 @@ export default function Home() {
 	}
 
 	return (
-		<Container>
-			<Row className="mb-2">
-				<Button variant="dark" onClick={() => send('rotation')}>
+		<Container className="my-5 p-2 mx-0 w-100">
+			<Row className="mb-2 m-0 w-100 p-0 d-flex justify-content-center">
+				<Button variant="dark" className="m-0 w-100" onClick={() => send('rotation')}>
 					Rotation
 				</Button>
 			</Row>
-			<Row>
-				<Button variant="dark" onClick={() => send('upsideDown')}>
+			<Row className="mb-2 m-0 w-100 p-0">
+				<Button variant="dark" className="w-100" onClick={() => send('upsideDown')}>
 					Upside down
 				</Button>
 			</Row>
