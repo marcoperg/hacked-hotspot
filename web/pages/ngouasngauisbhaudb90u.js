@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Container, Row, Button } from 'react-bootstrap';
 import { client, w3cwebsocket as W3CWebSocket } from 'websocket';
-import DOMPurify from 'dompurify';
 
 export default function Home() {
 	const ws = useRef(null);
