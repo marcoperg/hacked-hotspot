@@ -1,7 +1,19 @@
 let connects = [];
 
+function getConnectedUsers(req, res, next) {
+	try {
+		res.send({ status: 'ok', connectedUsers: connects.length });
+	} catch (error) {
+		next(error);
+	}
+}
+
 function websocket(ws, req) {
 	connects.push(ws);
+
+	ws.on('open', (s) => {
+		console.log('Connected -', s);
+	});
 
 	ws.on('message', (message) => {
 		console.log('Received -', message);
@@ -25,4 +37,5 @@ function websocket(ws, req) {
 
 module.exports = {
 	websocket,
+	getConnectedUsers,
 };

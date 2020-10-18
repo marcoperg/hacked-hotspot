@@ -10,7 +10,7 @@ export default function Home() {
 	const [upsideDown, setUpsideDown] = useState(false);
 
 	useEffect(() => {
-		ws.current = new W3CWebSocket('ws://127.0.0.1:4000/', 'echo-protocol');
+		ws.current = new W3CWebSocket(process.env.NEXT_PUBLIC_BACKEND_WS_URL, 'echo-protocol');
 
 		ws.current.onerror = () => {
 			console.log('Connection Error');
