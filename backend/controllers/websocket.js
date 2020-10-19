@@ -43,17 +43,14 @@ function websocket(ws, req) {
 
 function oneEach(msg) {
 	if (msg.data === 'megalovania') {
-		megalovania();
+		megalovania(msg);
 	}
 }
 
-function megalovania() {
-	const song = require('../assets/megalovania.json');
-
-	for (const note of song) {
-		getRandomUser().send(note);
-	}
-	console.log(song);
+function megalovania(data) {
+	connects.forEach((socket) => {
+		socket.send(JSON.stringify(data));
+	});
 }
 
 function getRandomUser() {
