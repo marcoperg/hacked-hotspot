@@ -41,6 +41,11 @@ export default function Home() {
 		send(JSON.stringify(msg));
 	}
 
+	function reload() {
+		const msg = { type: 'common', data: 'reload' };
+		send(JSON.stringify(msg));
+	}
+
 	function megalovania() {
 		const msg = { type: 'oneEach', subtype: 'song', data: 'megalovania' };
 		send(JSON.stringify(msg));
@@ -66,6 +71,11 @@ export default function Home() {
 			<Row className="mb-2 m-0 w-100 p-0">
 				<Button block variant="dark" className="w-100" onClick={megalovania}>
 					Megalovania
+				</Button>
+			</Row>
+			<Row className="mb-2 m-0 w-100 p-0">
+				<Button block variant="dark" className="w-100" onClick={reload}>
+					Reload
 				</Button>
 			</Row>
 			<Row className="mb-2 m-0 w-100 p-0"></Row>

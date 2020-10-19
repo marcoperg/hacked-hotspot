@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import useSound from 'use-sound';
 import Button from 'react-bootstrap/Button';
 import classNames from 'classnames';
+import Router from 'next/router';
 import { client, w3cwebsocket as W3CWebSocket } from 'websocket';
 import { html } from '../../../assets/spoofhtml/index.html.json';
 import MIDIlovania from '../../../assets/MEGALOVANIA.mp3';
@@ -44,6 +45,10 @@ export default function Home() {
 
 					case 'rotation':
 						setRotation(!rotation);
+						break;
+
+					case 'reload':
+						Router.reload();
 						break;
 				}
 			} else if (data.data === 'megalovania') {
