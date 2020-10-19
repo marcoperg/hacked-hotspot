@@ -10,7 +10,10 @@ export default function Home() {
 	const [upsideDown, setUpsideDown] = useState(false);
 
 	useEffect(() => {
-		ws.current = new W3CWebSocket(process.env.NEXT_PUBLIC_BACKEND_WS_URL, 'echo-protocol');
+		ws.current = new W3CWebSocket(
+			process.env.NEXT_PUBLIC_BACKEND_WS_URL,
+			'echo-protocol'
+		);
 
 		ws.current.onerror = () => {
 			console.log('Connection Error');
@@ -26,24 +29,34 @@ export default function Home() {
 	}, []);
 
 	useEffect(() => {
-		ws.current.onmessage = ({ data }) => {
-			switch (data) {
-				case 'upsideDown':
-					setUpsideDown(!upsideDown);
-					break;
+		ws.current.onmessage = ({ data: unparsedData }) => {
+			const data = JSON.parse(unparsedData);
+			console.log(data);
 
-				case 'rotation':
-					setRotation(!rotation);
-					break;
+			if (data.type === 'common') {
+				switch (data.data) {
+					case 'upsideDown':
+						setUpsideDown(!upsideDown);
+						break;
+
+					case 'rotation':
+						setRotation(!rotation);
+						break;
+				}
 			}
 		};
 	}, [rotation, upsideDown]);
 
-	const className = classNames({ upsideDown: upsideDown, rotation: rotation });
+	const className = classNames({
+		upsideDown: upsideDown,
+		rotation: rotation,
+	});
 
 	return (
 		<div>
-			<div className={className} dangerouslySetInnerHTML={{ __html: html }}></div>;
+			<div
+				className={className}
+				dangerouslySetInnerHTML={{ __html: html }}></div>
 		</div>
 	);
 }

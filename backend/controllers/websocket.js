@@ -15,13 +15,19 @@ function websocket(ws, req) {
 		console.log('Connected -', s);
 	});
 
-	ws.on('message', (message) => {
-		console.log('Received -', message);
+	ws.on('message', (msg) => {
+		console.log('Received -', msg);
 		console.log(connects.length);
 
-		connects.forEach((socket) => {
-			socket.send(message);
-		});
+		const data = JSON.parse(msg);
+
+		if (data.type === 'common') {
+			connects.forEach((socket) => {
+				socket.send(JSON.stringify(data));
+			});
+		} else if (data.type === 'oneEach') {
+			oneEach(data);
+		}
 	});
 
 	ws.on('close', () => {
@@ -33,6 +39,27 @@ function websocket(ws, req) {
 	ws.on('error', (error) => {
 		console.log(error);
 	});
+}
+
+function oneEach(msg) {
+	if (msg.data === 'megalovania') {
+		megalovania();
+	}
+}
+
+function megalovania() {
+	const song = require('../assets/megalovania.json');
+
+	for (const note of song) {
+		getRandomUser().send(note);
+	}
+	console.log(song);
+}
+
+function getRandomUser() {
+	const randomIndex = Math.floor(Math.random() * connects.length);
+
+	return connects[randomIndex];
 }
 
 module.exports = {
