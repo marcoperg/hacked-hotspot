@@ -8,7 +8,6 @@ export default function Home() {
 	const [{ loading, error, data }, getData] = useConnectedUsers();
 	const [fireworksAvailable, setFireworksAvailable] = useState(true);
 
-	console.log(loading, error, data);
 	useEffect(() => {
 		ws.current = new W3CWebSocket(
 			process.env.NEXT_PUBLIC_BACKEND_WS_URL,
