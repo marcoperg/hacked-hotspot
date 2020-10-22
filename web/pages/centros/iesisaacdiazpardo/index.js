@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import useSound from 'use-sound';
 import Button from 'react-bootstrap/Button';
+import { Fireworks } from 'fireworks/lib/react';
 import classNames from 'classnames';
 import Router from 'next/router';
 import { client, w3cwebsocket as W3CWebSocket } from 'websocket';
@@ -13,11 +14,15 @@ export default function Home() {
 	const [rotation, setRotation] = useState(false);
 	const [upsideDown, setUpsideDown] = useState(false);
 	const [showSongButton, setShowSongButton] = useState(false);
+	const [fireworks, setFireworks] = useState(false);
 
-	const [play, stop] = useSound(MIDIlovania);
+	const [play] = useSound(MIDIlovania);
 
 	useEffect(() => {
-		ws.current = new W3CWebSocket(process.env.NEXT_PUBLIC_BACKEND_WS_URL, 'echo-protocol');
+		ws.current = new W3CWebSocket(
+			process.env.NEXT_PUBLIC_BACKEND_WS_URL,
+			'echo-protocol'
+		);
 
 		ws.current.onerror = () => {
 			console.log('Connection Error');
@@ -47,6 +52,11 @@ export default function Home() {
 						setRotation(!rotation);
 						break;
 
+					case 'fireworks':
+						setFireworks(true);
+						setTimeout(() => setFireworks(false), 3000);
+						break;
+
 					case 'reload':
 						Router.reload();
 						break;
@@ -64,12 +74,31 @@ export default function Home() {
 
 	return (
 		<div>
+			{fireworks && (
+				<Fireworks
+					count='3'
+					internaval='200'
+					colors={['#cc3333', '#4CAF50', '#81C784']}
+					calc={(props, i) => ({
+						...props,
+						x: (i + 1) * (window.innerWidth / 3) - (i + 1) * 100,
+						y: 200 + Math.random() * 100 - 50 + (i === 2 ? -80 : 0),
+					})}
+				/>
+			)}
+
 			{showSongButton && (
-				<Button variant="dark" style={{ height: '20rem' }} onClick={play} block>
+				<Button
+					variant='dark'
+					style={{ height: '20rem' }}
+					onClick={play}
+					block>
 					Play a song
 				</Button>
 			)}
-			<div className={className} dangerouslySetInnerHTML={{ __html: html }}></div>
+			<div
+				className={className}
+				dangerouslySetInnerHTML={{ __html: html }}></div>
 		</div>
 	);
 }

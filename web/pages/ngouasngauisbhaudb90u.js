@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Container, Row, Button, Badge } from 'react-bootstrap';
 import { client, w3cwebsocket as W3CWebSocket } from 'websocket';
 import { useConnectedUsers } from '../hooks/useConnectedUsers';
@@ -6,10 +6,14 @@ import { useConnectedUsers } from '../hooks/useConnectedUsers';
 export default function Home() {
 	const ws = useRef(null);
 	const [{ loading, error, data }, getData] = useConnectedUsers();
+	const [fireworksAvailable, setFireworksAvailable] = useState(true);
 
 	console.log(loading, error, data);
 	useEffect(() => {
-		ws.current = new W3CWebSocket(process.env.NEXT_PUBLIC_BACKEND_WS_URL, 'echo-protocol');
+		ws.current = new W3CWebSocket(
+			process.env.NEXT_PUBLIC_BACKEND_WS_URL,
+			'echo-protocol'
+		);
 
 		ws.current.onerror = () => {
 			console.log('Connection Error');
@@ -41,6 +45,14 @@ export default function Home() {
 		send(JSON.stringify(msg));
 	}
 
+	function fireworks() {
+		setFireworksAvailable(false);
+		setTimeout(() => setFireworksAvailable(true), 4000);
+
+		const msg = { type: 'common', data: 'fireworks' };
+		send(JSON.stringify(msg));
+	}
+
 	function reload() {
 		const msg = { type: 'common', data: 'reload' };
 		send(JSON.stringify(msg));
@@ -52,33 +64,59 @@ export default function Home() {
 	}
 
 	return (
-		<Container className="my-5 p-2 mx-0 w-100">
-			<Row className="mb-2 m-0 w-100 p-0 d-flex justify-content-center">
-				<Badge disable variant="dark" className=" h-100 m-0 w-100">
-					Connected users: {(!loading && !error && `you and ${data.connectedUsers - 1} others`) || 'loading...'}
+		<Container className='my-5 p-2 mx-0 w-100'>
+			<Row className='mb-2 m-0 w-100 p-0 d-flex justify-content-center'>
+				<Badge disable variant='dark' className=' h-100 m-0 w-100'>
+					Connected users:{' '}
+					{(!loading &&
+						!error &&
+						`you and ${data.connectedUsers - 1} others`) ||
+						'loading...'}
 				</Badge>
 			</Row>
-			<Row className="mb-2 m-0 w-100 p-0 d-flex justify-content-center">
-				<Button block variant="dark" className="m-0 w-100" onClick={rotation}>
+			<Row className='mb-2 m-0 w-100 p-0 d-flex justify-content-center'>
+				<Button
+					block
+					variant='dark'
+					className='m-0 w-100'
+					onClick={rotation}>
 					Rotation
 				</Button>
 			</Row>
-			<Row className="mb-2 m-0 w-100 p-0">
-				<Button block variant="dark" className="w-100" onClick={upsideDown}>
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button
+					block
+					variant='dark'
+					className='w-100'
+					onClick={upsideDown}>
 					Upside down
 				</Button>
 			</Row>
-			<Row className="mb-2 m-0 w-100 p-0">
-				<Button block variant="dark" className="w-100" onClick={megalovania}>
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button
+					block
+					variant='dark'
+					className='w-100'
+					disabled={!fireworksAvailable}
+					onClick={fireworks}>
+					Fireworks
+				</Button>
+			</Row>
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button
+					block
+					variant='dark'
+					className='w-100'
+					onClick={megalovania}>
 					Megalovania
 				</Button>
 			</Row>
-			<Row className="mb-2 m-0 w-100 p-0">
-				<Button block variant="dark" className="w-100" onClick={reload}>
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button block variant='dark' className='w-100' onClick={reload}>
 					Reload
 				</Button>
 			</Row>
-			<Row className="mb-2 m-0 w-100 p-0"></Row>
+			<Row className='mb-2 m-0 w-100 p-0'></Row>
 		</Container>
 	);
 }
