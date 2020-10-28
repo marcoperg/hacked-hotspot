@@ -62,6 +62,11 @@ export default function Home() {
 		send(JSON.stringify(msg));
 	}
 
+	function instagram() {
+		const msg = { type: 'redirect', data: 'instagram', userName: 'test' };
+		send(JSON.stringify(msg));
+	}
+
 	return (
 		<Container className='my-5 p-2 mx-0 w-100'>
 			<Row className='mb-2 m-0 w-100 p-0 d-flex justify-content-center'>
@@ -73,6 +78,10 @@ export default function Home() {
 						'loading...'}
 				</Badge>
 			</Row>
+
+			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
+			{/* <h5>Movement</h5> */}
+			{/* </Row> */}
 			<Row className='mb-2 m-0 w-100 p-0 d-flex justify-content-center'>
 				<Button
 					block
@@ -91,6 +100,10 @@ export default function Home() {
 					Upside down
 				</Button>
 			</Row>
+
+			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
+			{/* <h5>Animations</h5> */}
+			{/* </Row> */}
 			<Row className='mb-2 m-0 w-100 p-0'>
 				<Button
 					block
@@ -101,6 +114,10 @@ export default function Home() {
 					Fireworks
 				</Button>
 			</Row>
+
+			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
+			{/* <h5>Sounds</h5> */}
+			{/* </Row> */}
 			<Row className='mb-2 m-0 w-100 p-0'>
 				<Button
 					block
@@ -110,6 +127,23 @@ export default function Home() {
 					Megalovania
 				</Button>
 			</Row>
+
+			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
+			{/* <h5>Redirections</h5> */}
+			{/* </Row> */}
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button
+					block
+					variant='dark'
+					className='w-100'
+					onClick={instagram}>
+					Instagram
+				</Button>
+			</Row>
+
+			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
+			{/* <h5>Assistants</h5> */}
+			{/* </Row> */}
 			<Row className='mb-2 m-0 w-100 p-0'>
 				<Button block variant='dark' className='w-100' onClick={reload}>
 					Reload

@@ -61,6 +61,14 @@ export default function Home() {
 						Router.reload();
 						break;
 				}
+			} else if (data.type === 'redirect') {
+				switch (data.data) {
+					case 'instagram':
+						Router.push(
+							`instagram://user?username=${data.userName}`
+						);
+						break;
+				}
 			} else if (data.data === 'megalovania') {
 				setShowSongButton(true);
 			}
@@ -96,9 +104,13 @@ export default function Home() {
 					Play a song
 				</Button>
 			)}
-			<div
+
+			<div>
+				<h1 className={className}>Hola</h1>
+			</div>
+			{/* <div
 				className={className}
-				dangerouslySetInnerHTML={{ __html: html }}></div>
+				dangerouslySetInnerHTML={{ __html: html }}></div> */}
 		</div>
 	);
 }
