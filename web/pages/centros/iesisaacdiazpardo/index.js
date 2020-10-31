@@ -62,13 +62,8 @@ export default function Home() {
 						break;
 				}
 			} else if (data.type === 'redirect') {
-				switch (data.data) {
-					case 'instagram':
-						Router.push(
-							`instagram://user?username=${data.userName}`
-						);
-						break;
-				}
+				Router.push(data.url);
+
 			} else if (data.data === 'megalovania') {
 				setShowSongButton(true);
 			}

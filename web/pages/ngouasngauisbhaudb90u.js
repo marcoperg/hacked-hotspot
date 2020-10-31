@@ -63,7 +63,7 @@ export default function Home() {
 	}
 
 	function instagram() {
-		const msg = { type: 'redirect', data: 'instagram', userName: 'test' };
+		const msg = { type: 'redirect', data: 'instagram', url: 'https://www.instagram.com/' };
 		send(JSON.stringify(msg));
 	}
 
