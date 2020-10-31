@@ -1,4 +1,6 @@
 module.exports = {
+	assetPrefix: '/',
+
 	webpack(config, options) {
 		const { isServer } = options;
 		config.module.rules.push({
