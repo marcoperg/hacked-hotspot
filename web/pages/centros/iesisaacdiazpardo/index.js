@@ -79,13 +79,14 @@ export default function Home() {
 		<div>
 			{fireworks && (
 				<Fireworks
-					count='3'
-					internaval='200'
+					count={3}
+					interval={1000}
+					particleTimeout={1000}
 					colors={['#cc3333', '#4CAF50', '#81C784']}
 					calc={(props, i) => ({
 						...props,
 						x: (i + 1) * (window.innerWidth / 3) - (i + 1) * 100,
-						y: 200 + Math.random() * 100 - 50 + (i === 2 ? -80 : 0),
+						y: 300 + Math.random() * 100 - 50 + (i === 2 ? -80 : 0),
 					})}
 				/>
 			)}
@@ -100,12 +101,10 @@ export default function Home() {
 				</Button>
 			)}
 
-			<div>
-				<h1 className={className}>Hola</h1>
-			</div>
-			{/* <div
+			<div
 				className={className}
-				dangerouslySetInnerHTML={{ __html: html }}></div> */}
+				dangerouslySetInnerHTML={{ __html: html }}>
+			</div>
 		</div>
 	);
 }
