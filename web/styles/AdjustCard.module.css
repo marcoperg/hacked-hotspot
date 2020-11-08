@@ -1,0 +1,7 @@
+.adjustCard {
+	width: 100%;
+	height: 100vh;
+	background-image: url('../assets/adjustCard.gif');
+	position: fixed;
+	z-index: 100;
+}

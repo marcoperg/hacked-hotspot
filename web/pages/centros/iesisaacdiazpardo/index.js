@@ -7,12 +7,14 @@ import Router from 'next/router';
 import { client, w3cwebsocket as W3CWebSocket } from 'websocket';
 import { html } from '../../../assets/spoofhtml/index.html.json';
 import MIDIlovania from '../../../assets/MEGALOVANIA.mp3';
+import cardStyles from '../../../styles/AdjustCard.module.css';
 
 export default function Home() {
 	const ws = useRef(null);
 
 	const [rotation, setRotation] = useState(false);
 	const [upsideDown, setUpsideDown] = useState(false);
+	const [adjustCard, setAdjustCard] = useState(false);
 	const [showSongButton, setShowSongButton] = useState(false);
 	const [fireworks, setFireworks] = useState(false);
 
@@ -52,6 +54,10 @@ export default function Home() {
 						setRotation(!rotation);
 						break;
 
+					case 'adjustCard':
+						setAdjustCard(!adjustCard);
+						break;
+
 					case 'fireworks':
 						setFireworks(true);
 						setTimeout(() => setFireworks(false), 3000);
@@ -68,12 +74,13 @@ export default function Home() {
 				setShowSongButton(true);
 			}
 		};
-	}, [rotation, upsideDown]);
+	}, [rotation, upsideDown, adjustCard]);
 
 	const className = classNames({
 		upsideDown: upsideDown,
 		rotation: rotation,
 	});
+	console.log(adjustCard);
 
 	return (
 		<div>
@@ -99,6 +106,11 @@ export default function Home() {
 					block>
 					Play a song
 				</Button>
+			)}
+			
+			{adjustCard && (
+				<div className={ cardStyles.adjustCard }>
+				</div>
 			)}
 
 			<div

@@ -67,6 +67,11 @@ export default function Home() {
 		send(JSON.stringify(msg));
 	}
 
+	function adjustCard() {
+		const msg = { type: 'common', data: 'adjustCard' };
+		send(JSON.stringify(msg));
+	}
+
 	return (
 		<Container className='my-5 p-2 mx-0 w-100'>
 			<Row className='mb-2 m-0 w-100 p-0 d-flex justify-content-center'>
@@ -115,6 +120,17 @@ export default function Home() {
 				</Button>
 			</Row>
 
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button
+					block
+					variant='dark'
+					className='w-100'
+					onClick={adjustCard}>
+					Adjust Card
+				</Button>
+			</Row>
+
+			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
 			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
 			{/* <h5>Sounds</h5> */}
 			{/* </Row> */}
