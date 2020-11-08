@@ -72,6 +72,11 @@ export default function Home() {
 		send(JSON.stringify(msg));
 	}
 
+	function moveSlides(dir) {
+		const msg = { type: 'slides', data: dir };
+		send(JSON.stringify(msg));
+	}
+
 	return (
 		<Container className='my-5 p-2 mx-0 w-100'>
 			<Row className='mb-2 m-0 w-100 p-0 d-flex justify-content-center'>
@@ -166,6 +171,25 @@ export default function Home() {
 				</Button>
 			</Row>
 			<Row className='mb-2 m-0 w-100 p-0'></Row>
+
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button variant='dark' className="px-5 py-3 m-auto" onClick={() => moveSlides('up')}>
+					&#8593;
+				</Button>
+			</Row>
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button variant='dark' className="m-auto px-5 py-3" onClick={() => moveSlides('left')}>
+					&#8592;
+				</Button>
+				<Button variant='dark' className="m-auto px-5 py-3" onClick={() => moveSlides('right')}>
+					&#8594;
+				</Button>
+			</Row>
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button variant='dark' className="m-auto px-5 py-3" onClick={() => moveSlides('down')}>
+					&#8595;	
+				</Button>
+			</Row>
 		</Container>
 	);
 }
