@@ -67,6 +67,11 @@ export default function Home() {
 		send(JSON.stringify(msg));
 	}
 
+	function ending() {
+		const msg = { type: 'redirect', data: 'instagram', url: 'https://youtu.be/Ga_RwPmx-N0' };
+		send(JSON.stringify(msg));
+	}
+	
 	function adjustCard() {
 		const msg = { type: 'common', data: 'adjustCard' };
 		send(JSON.stringify(msg));
@@ -162,6 +167,15 @@ export default function Home() {
 				</Button>
 			</Row>
 
+			<Row className='mb-2 m-0 w-100 p-0'>
+				<Button
+					block
+					variant='dark'
+					className='w-100'
+					onClick={ending}>
+					Final
+				</Button>
+			</Row>
 			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
 			{/* <h5>Assistants</h5> */}
 			{/* </Row> */}
@@ -172,6 +186,9 @@ export default function Home() {
 			</Row>
 			<Row className='mb-2 m-0 w-100 p-0'></Row>
 
+			{/* <Row className='mt-4 m-0 w-100 p-0 d-flex justify-content-center'> */}
+			{/* <h5>Slides</h5> */}
+			{/* </Row> */}
 			<Row className='mb-2 m-0 w-100 p-0'>
 				<Button variant='dark' className="px-5 py-3 m-auto" onClick={() => moveSlides('up')}>
 					&#8593;
