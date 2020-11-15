@@ -21,7 +21,7 @@ function websocket(ws, req) {
 
 		const data = JSON.parse(msg);
 
-		if (data.type === 'common' || data.type === 'redirect') {
+		if (data.type === 'common' || data.type === 'redirect' || data.type === 'slides') {
 			connects.forEach((socket) => {
 				socket.send(JSON.stringify(data));
 			});

@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+			<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Hacking con Marco</h2>
+				</section>
+				<section>
+					<section>
+						<h2>DEFINICIONES<h2>
+					</section>
+					<section>	
+						<h3>Hacker</h3>
+						<p>
+							A person who delights in having an intimate understanding of the
+							internal workings of a system, computers and computer networks in
+							particular. The term is often misused in a pejorative context,
+							where "cracker" would be the correct term.
+						</p>
+					</section>
+
+					<section>	
+						<h3>Cracker</h3>
+						<p>
+							A cracker is an individual who attempts to access computer systems
+							without authorization. These individuals are often malicious, as
+							opposed to hackers, and have many means at their disposal for
+							breaking into a system.
+						</p>
+					</section>
+				</section>
+
+				<section>	
+					<section>	
+						<h2>DNS SPOOFING</h2>
+						<p>Un ejemplo de lo vulnerable que puede ser el mundo digital</p>
+					</section>
+
+					<section>	
+						<h2>WiFI</h2>
+						<p>SSID: <strong>IesIsaacDiazPardo_WiFi</strong></p>
+						<p>Pass: <strong>22081920</strong></p>
+					</section>
+
+					<section>	
+						<h2>WiFI</h2>
+						<p>SSID: <strong>IesIsaacDiazPardo_WiFi</strong></p>
+						<p>Pass: <strong>22081920</strong></p>
+						<p>Web: <strong>http://www.edu.xunta.gal/centros/iesisaacdiazpardo/</strong></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Arquitectura del ataque</h3>
+					</section>
+
+					<section>
+						<h3>Rogue AP</h3>
+					</section>
+					<section>
+						<h3>Rogue AP</h3>
+						<img data-src="evil-twin.png">
+					</section>
+
+					<section>
+						<h3>DNS Spoofing</h3>
+					</section>
+					<section>
+						<h3>DNS</h3>
+						<img data-src="dnsServer.png">
+					</section>
+					<section>
+						<h3>DNS Spoofing</h3>
+						<img data-src="dnsSpoof.jpg">
+					</section>
+			</div>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					// pass other options into `MathJax.Hub.Config()`
+					TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+
+			// Create WebSocket connection.
+			const localIp = '192.168.19.198';
+			const socket = new WebSocket(`ws://${localIp}:4000/`);
+
+			// Connection opened
+			socket.addEventListener('open', function (event) {
+				const helloMsg = {type: 'hello', data: 'hello'};
+				socket.send(JSON.stringify(helloMsg));
+			});
+
+			// Listen for messages
+			socket.addEventListener('message', function (event) {
+				const { data } = JSON.parse(event.data);
+
+				if (data === 'up') Reveal.up();
+				if (data === 'down') Reveal.down();
+				if (data === 'left') Reveal.left();
+				if (data === 'right') Reveal.right();
+				console.log(event.data);
+			});
+
+		</script>
+	</body>
+</html>
