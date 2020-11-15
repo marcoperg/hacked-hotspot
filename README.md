@@ -2,7 +2,7 @@
 
 ## Objective
 
-The final goal of this project is to create awareness on the danger of public AP and hotspot while also creating this magic trick vibe to show the wonders of hacker projects.
+The final goal of this project is to create awareness on the danger of public AP and hotspots while also creating this magic trick vibe to show the wonders of hacker projects.
 
 [Credits to Tom Webb](https://www.youtube.com/watch?v=Tp25LmdYlds)
 
@@ -10,4 +10,3 @@ The final goal of this project is to create awareness on the danger of public AP
 
 - [WiFi Hotspot with custom name and password](./wifi-hotspot/hotspot.md)
 - [DNS Spoofing (Forward request meant to a particual or all server to another one)](dns-spoofing/dns-spoofing.md)
-- Hijack intagram, twitter... backend to show disposte content
