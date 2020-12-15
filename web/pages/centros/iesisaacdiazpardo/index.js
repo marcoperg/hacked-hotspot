@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import Router from 'next/router';
 import { client, w3cwebsocket as W3CWebSocket } from 'websocket';
 import { html } from '../../../assets/spoofhtml/index.html.json';
-import MIDIlovania from '../../../assets/MEGALOVANIA.mp3';
+import MIDIlovania from '../../../assets/magalavaAanaa.mp3';
 import cardStyles from '../../../styles/AdjustCard.module.css';
 
 export default function Home() {
