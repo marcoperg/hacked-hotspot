@@ -19,7 +19,7 @@
   ```
   apt-get install dkms
   cd rtl8812au
-  sudo ./dkms-install.sh
+  sudo make dkms_install
   ```
 
 In case it's need you can uninstall with
